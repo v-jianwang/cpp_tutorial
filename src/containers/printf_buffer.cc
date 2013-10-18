@@ -42,8 +42,8 @@ inline void alloc_copy_and_format(const char *buf, int64_t length, int append_si
 	char *new_ptr = new char[alloc_limit];
 	memcpy(new_ptr, buf, length);
 	
-	DEBUG_VAR int size = vsnprintf(new_ptr + length, size_t(append_size) + 1, fmt, ap);
-	rassert(size == append_size);
+//	DEBUG_VAR int size = vsnprintf(new_ptr + length, size_t(append_size) + 1, fmt, ap);
+//	rassert(size == append_size);
 	
 	*buf_out = new_ptr;
 }
