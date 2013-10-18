@@ -1,0 +1,6 @@
+#ifndef ARCH_IO_DISK_HPP_
+#define ARCH_IO_DISK_HPP_
+
+#define DEFAULT_MAX_CONCURRENT_TO_REQUESTS 64
+
+#endif	// ARCH_IO_DISK_HPP_
