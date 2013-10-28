@@ -4,7 +4,7 @@
 #	2. move all of cpp files from subfolder(or sub subfolder) to root
 #	3. run g++ compiler to compile all of cpp files in root folder
 
-# sample command: buildcpp.sh rethinkdb /d/root/projects/rethinkdb linz
+# command sample: buildcpp.sh rethinkdb /d/root/projects/rethinkdb linz
 
 project_name=$1
 project_path=$2
@@ -46,7 +46,7 @@ compile_cpps() {
 	# collect all of .cc files in root
 	cpp_files=$( find $cpp_build_instance_path -maxdepth 1 -name "*.cc" -exec echo {} \; )
 	# echo "cpp files=$cpp_files" > output.txt
-	exe_filename=$cpp_build_instance_path/$project_name
+	local exe_filename=$cpp_build_instance_path/$project_name
 	
 	compile_command="g++ $cpp_files -Wall -ansi -o $exe_filename"
 	echo "compile_command=$compile_command"
@@ -57,10 +57,17 @@ compile_cpps() {
 	echo "compile cpps done"
 }
 
-
+run_exe() {
+	local exe_filename=$cpp_build_instance_path/$project_name
+	echo ""
+	echo "running... $exe_filename"
+	exe_output=$( $exe_filename )
+	echo "$exe_output";
+}
 
 # Main thread
 copy_folder
 move_cpps
 compile_cpps 
+run_exe
  
