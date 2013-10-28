@@ -9,7 +9,7 @@
 #include "utils.hpp"
 
 int main(int argc, char *argv[]) {
-	printf("Hello world\n");
+	printf("Bonjour world\n");
 	
 	startup_shutdown_t startup_shutdown;
 	

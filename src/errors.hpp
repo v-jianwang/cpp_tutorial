@@ -100,7 +100,7 @@
 
 #define crash_or_trap(msg, ...) do {                                \
         report_fatal_error(__FILE__, __LINE__, msg, ##__VA_ARGS__); \
-        BREAKPOINT;                                                 \
+        exit(EXIT_FAILURE);                    						\
     } while (0)
 
 void report_fatal_error(const char*, int, const char*, ...) __attribute__((format (printf, 3, 4)));
